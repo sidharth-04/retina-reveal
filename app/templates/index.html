@@ -31,8 +31,7 @@
         <div class="row" style="height: 100%;">
             <div class="col d-flex flex-column justify-content-center">
                 <h1 class="display-4">About</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero nesciunt odio voluptate cum saepe error illo debitis veniam eligendi qui architecto excepturi, tempore cupiditate recusandae facere? Rem, doloribus necessitatibus
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nemo, voluptas quidem incidunt rem harum reprehenderit veniam odit tempore impedit delectus fugiat aliquam totam repellendus atque adipisci molestias voluptate sapiente!!</p>
+                <p>RetinaReveal is a groundbreaking tool designed to elevate the quality and clarity of low-resolution retina images. Developed with an understanding of the challenges faced in ophthalmology, our application employs advanced image processing techniques to enhance the details and resolution of retina images, facilitating more accurate diagnosis and analysis.</p>
                 <div class="d-flex">
                     <a href="#upload-wrapper" class="btn btn-md btn-outline-light" style="margin-right: 10px;">Upload</a>
                     <a href="#gallery" class="btn btn-md btn-outline-light">Gallery</a>
@@ -51,7 +50,7 @@
             <div class="row">
                 <div class="col-7" style="padding-right: 1;">
                     <h1 class="display-4">Upload</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni commodi doloribus quis enim, beatae dicta voluptas odio, quisquam numquam officiis culpa quasi delectus vero, assumenda at. Ipsa dicta accusantium facilis.</p>
+                    <p>Upload your blurry retina image here and witness the transformation firsthand. Simply select your image file and let RetinaReveal do the rest. Take the first step towards improved medical imaging and more accurate diagnoses.</p>
                 </div>
                 <div class="col-5 image-container">
                     <img class="m-4 outer" src="{{ url_for('static', filename='images/RetinaBlue.png') }}" alt="">
@@ -69,7 +68,7 @@
                     <img src="{{ url_for('static', filename='images/Arrow.png') }}" style="width: 8vw;" alt="">
                     <img src="" alt="" id="generation-result">
                 </div>
-                <div class="d-flex mt-3" style="margin-left: auto; margin-right: auto; width: 30%;">
+                <div class="d-flex mt-3 justify-content-center align-items-center" style="margin-left: auto; margin-right: auto; width: 30%;">
                     <button class="btn btn-md btn-outline-light" style="margin-right: 10px;" onclick="downloadImage()">Download</button>
                     <button class="btn btn-md btn-outline-light" onclick="hideResults()">Discard</button>
                 </div>
@@ -81,8 +80,7 @@
         <div class="row" style="height: 100%;">
             <div class="col d-flex flex-column justify-content-center">
                 <h1 class="display-4">Gallery</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero nesciunt odio voluptate cum saepe error illo debitis veniam eligendi qui architecto excepturi, tempore cupiditate recusandae facere? Rem, doloribus necessitatibus
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nemo, voluptas quidem incidunt rem harum reprehenderit veniam odit tempore impedit delectus fugiat aliquam totam repellendus atque adipisci molestias voluptate sapiente!!</p>
+                <p>Each image showcased here demonstrates the remarkable improvement in quality and clarity achieved through our image processing algorithm. From enhancing subtle details to improving overall resolution, our application brings out the intricacies of retina images, enabling healthcare professionals to make more accurate diagnoses and treatment decisions.</p>
             </div>
             <div class="col d-flex flex-column justify-content-center">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
