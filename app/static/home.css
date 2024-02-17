@@ -1,0 +1,133 @@
+.navbar-dark {
+    background-color: rgba(26, 22, 20, 0.95);
+}
+
+nav img {
+    margin-left: 15px;
+}
+
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: rgb(183,81,0);
+    text-underline-offset: 0.25em;
+    margin-bottom: 0.5em;
+}
+h3 {
+    color: white;
+    margin-bottom: 0.5em;
+}
+p {
+    color: white;
+    font-size: large;
+}
+
+#about {
+    height: 90%;
+}
+#about img {
+    width: 35vw;
+    filter: drop-shadow(10px 10px 10px rgb(74, 14, 14));
+}
+h1.top-text, h1.bottom-text {
+    font-size: 8vw;
+    text-decoration: none!important;
+}
+#about .top-text {
+    position: absolute;
+    left: 5vw;
+    top: 25vh;
+}
+#about .bottom-text {
+    position: absolute;
+    right: 5vw;
+    bottom: 18vh;
+}
+
+#upload-wrapper {
+    margin-top: 5vh;
+    height: 90%;
+}
+#upload {
+    background-color: rgba(30, 30, 30, 0.8);
+    border-radius: 10px;
+    padding: 3vw;
+    width: 80vw;
+}
+#upload .image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#upload img.outer {
+    width: 15vw;
+    filter: drop-shadow(10px 10px 10px rgb(5, 19, 82));
+    position: absolute;
+    margin: auto;
+}
+#upload img.inner {
+    width: 10vw;
+    position: absolute;
+    margin: auto;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+#upload img.inner:hover {
+    transform: scale(1.1); /* Scale the image by 10% on hover */
+}
+
+.spinner-border {
+    width: 5rem;
+    height: 5rem;
+}
+
+ hr {
+    border-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+ }
+
+ .fixed-section {
+    position: fixed;
+    top: 50%; /* Adjust as needed */
+    transform: translateY(-50%);
+    z-index: 1000; /* Adjust as needed */
+    background-color: #fff; /* Adjust background color if needed */
+    padding: 10px; /* Adjust padding if needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+    width: 100%;
+}
+
+@keyframes textFadeIn {
+    0% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+#about > div > div:nth-child(1) > h1 {
+    animation: textFadeIn 1s 0.1s both;
+}
+#about > div > div:nth-child(1) > p {
+    animation: textFadeIn 1.2s 0.3s both;
+}
+#about button {
+    animation: textFadeIn 1.2s 0.3s both;
+}
+#about > div > div.col.d-flex.flex-column.justify-content-center.align-items-center > h1.top-text {
+    animation: textFadeIn 1.2s 0.4s both;
+}
+#about > div > div.col.d-flex.flex-column.justify-content-center.align-items-center > h1.bottom-text {
+    animation: textFadeIn 1.2s 0.5s both;
+}

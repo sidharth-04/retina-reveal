@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css' )}}">
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename='images/RetinaLogo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+            Retina Reveal
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#upload-wrapper">Upload</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#gallery">Gallery</a>
+              </li>
+            </ul>
+          </div>
+    </nav>
+
+    <div class="container-lg" id="about">
+        <div class="row" style="height: 100%;">
+            <div class="col d-flex flex-column justify-content-center">
+                <h1 class="display-4">About</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero nesciunt odio voluptate cum saepe error illo debitis veniam eligendi qui architecto excepturi, tempore cupiditate recusandae facere? Rem, doloribus necessitatibus
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nemo, voluptas quidem incidunt rem harum reprehenderit veniam odit tempore impedit delectus fugiat aliquam totam repellendus atque adipisci molestias voluptate sapiente!!</p>
+                <div class="d-flex">
+                    <a href="#upload-wrapper" class="btn btn-md btn-outline-light" style="margin-right: 10px;">Upload</a>
+                    <a href="#gallery" class="btn btn-md btn-outline-light">Gallery</a>
+                </div>
+                </div>
+            <div class="col d-flex flex-column justify-content-center align-items-center" style="position: relative;">
+                <img src="{{ url_for('static', filename='images/RetinaMain.png') }}" alt="">
+                <h1 class="top-text">Retina</h1>
+                <h1 class="bottom-text">Reveal</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-lg d-flex flex-column justify-content-center align-items-center" id="upload-wrapper">
+        <div class="container-lg d-flex flex-column justify-content-center align-items-center" id="upload">
+            <div class="row">
+                <div class="col-7" style="padding-right: 1;">
+                    <h1 class="display-4">Upload</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni commodi doloribus quis enim, beatae dicta voluptas odio, quisquam numquam officiis culpa quasi delectus vero, assumenda at. Ipsa dicta accusantium facilis.</p>
+                </div>
+                <div class="col-5 image-container">
+                    <img class="m-4 outer" src="{{ url_for('static', filename='images/RetinaBlue.png') }}" alt="">
+                    <img class="m-4 inner" src="{{ url_for('static', filename='images/Upload.png') }}" alt="">
+                    <input type="file" accept="image/*" id="file-upload" style="display: none;" onchange="handleFileUpload(event)">
+                    <div class="loading-overlay d-none">
+                        <div class="spinner-border" role="status"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="generation" class="d-none" style="width: 100%;">
+                <hr class="mb-4 mt-5">
+                <div class="d-flex justify-content-around align-items-center" style="background-color: black; margin-left: 10vw; margin-right: 10vw;">
+                    <img src="" alt="" id="generation-input">
+                    <img src="{{ url_for('static', filename='images/Arrow.png') }}" style="width: 8vw;" alt="">
+                    <img src="" alt="" id="generation-result">
+                </div>
+                <div class="d-flex mt-3" style="margin-left: auto; margin-right: auto; width: 30%;">
+                    <button class="btn btn-md btn-outline-light" style="margin-right: 10px;" onclick="downloadImage()">Download</button>
+                    <button class="btn btn-md btn-outline-light" onclick="hideResults()">Discard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-lg" id="gallery">
+        <div class="row" style="height: 100%;">
+            <div class="col d-flex flex-column justify-content-center">
+                <h1 class="display-4">Gallery</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vero nesciunt odio voluptate cum saepe error illo debitis veniam eligendi qui architecto excepturi, tempore cupiditate recusandae facere? Rem, doloribus necessitatibus
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nemo, voluptas quidem incidunt rem harum reprehenderit veniam odit tempore impedit delectus fugiat aliquam totam repellendus atque adipisci molestias voluptate sapiente!!</p>
+            </div>
+            <div class="col d-flex flex-column justify-content-center">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img class="d-block w-100" src="{{ url_for('static', filename='images/samples/1.png') }}" alt="First slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ url_for('static', filename='images/samples/2.png') }}" alt="Second slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ url_for('static', filename='images/samples/3.png') }}" alt="Third slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="{{ url_for('static', filename='images/samples/4.png') }}" alt="Fourth slide">
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <!-- <span class="sr-only">Previous</span> -->
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <!-- <span class="sr-only">Next</span> -->
+                    </a>
+                  </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</html>
